@@ -1,7 +1,15 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
+import { Roboto } from 'next/font/google';
 
+import './globals.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+const roboto = Roboto({
+    weight: ['400', '700'],
+    subsets: ['latin'],
+    variable: '--font-roboto',
+});
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
     variable: '--font-geist-sans',
@@ -26,7 +34,7 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={`${roboto.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 {children}
             </body>

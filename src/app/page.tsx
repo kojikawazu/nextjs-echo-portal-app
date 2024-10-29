@@ -1,10 +1,14 @@
-import React from 'react';
+import PortalMain from '@/app/components/portal/PortalMain';
 
+/**
+ * ポータルのホームページ
+ * @returns JSX.Element
+ */
 const PortalHomePage = () => {
     return (
-        <div>
-            <h1>Portal Home Page</h1>
-        </div>
+        <>
+            <PortalMain />
+        </>
     );
 };
 

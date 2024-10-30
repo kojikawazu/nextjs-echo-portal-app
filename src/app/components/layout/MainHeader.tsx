@@ -1,5 +1,6 @@
 // constants
 import { CommonConstants } from '@/app/utils/constants/common-constants';
+// components
 import HeaderLink from '@/app/components/layout/atoms/HeaderLink';
 
 interface MainHeaderProps {
@@ -14,6 +15,7 @@ interface MainHeaderProps {
  * @returns JSX.Element
  */
 const MainHeader = ({ isMenuOpen, setIsMenuOpen }: MainHeaderProps) => {
+    const introWebUrl = process.env.NEXT_PUBLIC_INTRO_WEB_URL as string;
     const blogWebUrl = process.env.NEXT_PUBLIC_BLOG_WEB_URL as string;
 
     return (
@@ -35,7 +37,13 @@ const MainHeader = ({ isMenuOpen, setIsMenuOpen }: MainHeaderProps) => {
                         <HeaderLink
                             icon={<i className="fas fa-user-circle mr-2"></i>}
                             text="ポートフォリオ"
-                            url="/portfolio"
+                            url={introWebUrl ? introWebUrl : '#'}
+                        />
+
+                        <HeaderLink
+                            icon={<i className="fas fa-code mr-2"></i>}
+                            text="個人開発履歴"
+                            url={CommonConstants.URL.PERSONALDEV}
                         />
 
                         <HeaderLink

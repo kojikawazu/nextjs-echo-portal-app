@@ -4,5 +4,6 @@ export const CommonConstants = {
         CONTACT: '/contact/form',
         CONTACT_CONFIRM: '/contact/confirm',
         CONTACT_SUCCESSED: '/contact/successed',
+        PERSONALDEV: '/personaldev',
     },
 };

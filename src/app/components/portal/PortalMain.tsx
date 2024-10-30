@@ -14,6 +14,7 @@ import PortalCard from '@/app/components/portal/atoms/PortalCard';
  */
 const PortalMain = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const introWebUrl = process.env.NEXT_PUBLIC_INTRO_WEB_URL as string;
     const blogWebUrl = process.env.NEXT_PUBLIC_BLOG_WEB_URL as string;
 
     return (
@@ -24,7 +25,16 @@ const PortalMain = () => {
                         icon={<i className="fas fa-user-circle text-4xl text-[#3498db] mb-4"></i>}
                         title="ポートフォリオ"
                         description="私のスキルと実績をご覧ください"
-                        url="/portfolio"
+                        url={introWebUrl ? introWebUrl : '#'}
+                        linkText="詳しく見る"
+                        linkIcon={<i className="fas fa-arrow-right ml-2"></i>}
+                    />
+
+                    <PortalCard
+                        icon={<i className="fas fa-code text-4xl text-[#3498db] mb-4"></i>}
+                        title="個人開発履歴"
+                        description="私の個人開発の履歴をご覧ください"
+                        url={CommonConstants.URL.PERSONALDEV}
                         linkText="詳しく見る"
                         linkIcon={<i className="fas fa-arrow-right ml-2"></i>}
                     />

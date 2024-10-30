@@ -1,3 +1,8 @@
+import Link from 'next/link';
+
+// constants
+import { CommonConstants } from '@/app/utils/constants/common-constants';
+
 interface MainHeaderProps {
     isMenuOpen: boolean;
     setIsMenuOpen: (isMenuOpen: boolean) => void;
@@ -10,6 +15,8 @@ interface MainHeaderProps {
  * @returns JSX.Element
  */
 const MainHeader = ({ isMenuOpen, setIsMenuOpen }: MainHeaderProps) => {
+    const blogWebUrl = process.env.NEXT_PUBLIC_BLOG_WEB_URL as string;
+
     return (
         <header className="bg-gradient-to-r from-[#2c3e50] to-[#3498db] text-white py-4 px-6 sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
@@ -17,6 +24,7 @@ const MainHeader = ({ isMenuOpen, setIsMenuOpen }: MainHeaderProps) => {
                     <i className="fas fa-terminal text-2xl mr-2"></i>
                     <h1 className="text-xl font-bold">My Tech Hub</h1>
                 </div>
+
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className="md:hidden"
@@ -31,30 +39,30 @@ const MainHeader = ({ isMenuOpen, setIsMenuOpen }: MainHeaderProps) => {
                 >
                     <ul className="flex flex-col md:flex-row items-center p-4 md:p-0">
                         <li className="my-2 md:my-0 md:mx-4">
-                            <a
+                            <Link
                                 href="/portfolio"
                                 className="hover:text-[#3498db] transition-colors duration-200 flex items-center"
                             >
                                 <i className="fas fa-user-circle mr-2"></i>
                                 ポートフォリオ
-                            </a>
+                            </Link>
                         </li>
                         <li className="my-2 md:my-0 md:mx-4">
-                            <a
-                                href="/blog"
+                            <Link
+                                href={blogWebUrl ? blogWebUrl : '#'}
                                 className="hover:text-[#3498db] transition-colors duration-200 flex items-center"
                             >
                                 <i className="fas fa-blog mr-2"></i>ブログ
-                            </a>
+                            </Link>
                         </li>
                         <li className="my-2 md:my-0 md:mx-4">
-                            <a
-                                href="/contact/form"
+                            <Link
+                                href={CommonConstants.URL.CONTACT}
                                 className="hover:text-[#3498db] transition-colors duration-200 flex items-center"
                             >
                                 <i className="fas fa-envelope mr-2"></i>
                                 お問い合わせ
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

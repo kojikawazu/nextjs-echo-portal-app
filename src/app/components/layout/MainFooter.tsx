@@ -1,34 +1,41 @@
+import Link from 'next/link';
+
 /**
  * メインフッター
  * @returns JSX.Element
  */
 const MainFooter = () => {
+    const myGithubUrl = process.env.NEXT_PUBLIC_MY_GITHUB_URL as string;
+    const myTwitterUrl = process.env.NEXT_PUBLIC_MY_TWITTER_URL as string;
+    const myLinkedinUrl = process.env.NEXT_PUBLIC_MY_LINKEDIN_URL as string;
+
     return (
         <footer className="bg-[#2c3e50] text-white py-6 px-6">
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-4 md:mb-0">
-                        <p>© 2024 My Tech Hub</p>
+                        <p>© {new Date().getFullYear()} My Tech Hub</p>
                     </div>
+
                     <div className="flex space-x-6">
-                        <a
-                            href="https://github.com"
+                        <Link
+                            href={myGithubUrl ? myGithubUrl : '#'}
                             className="hover:text-[#3498db] transition-colors duration-200"
                         >
                             <i className="fab fa-github text-xl"></i>
-                        </a>
-                        <a
-                            href="https://twitter.com"
+                        </Link>
+                        <Link
+                            href={myTwitterUrl ? myTwitterUrl : '#'}
                             className="hover:text-[#3498db] transition-colors duration-200"
                         >
                             <i className="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a
-                            href="https://linkedin.com"
+                        </Link>
+                        <Link
+                            href={myLinkedinUrl ? myLinkedinUrl : '#'}
                             className="hover:text-[#3498db] transition-colors duration-200"
                         >
                             <i className="fab fa-linkedin text-xl"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

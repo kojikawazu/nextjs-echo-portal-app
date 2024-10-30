@@ -29,9 +29,7 @@ const ContactForm = () => {
         });
     };
 
-    const handleChangeTextarea = (
-        e: React.ChangeEvent<HTMLTextAreaElement>
-    ) => {
+    const handleChangeTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -43,9 +41,7 @@ const ContactForm = () => {
             <div className="flex-grow container mx-auto px-6 py-12">
                 <div className="max-w-md mx-auto">
                     <div className="text-center">
-                        <h1 className="text-3xl font-bold font-noto-sans mb-8">
-                            お問い合わせ
-                        </h1>
+                        <h1 className="text-3xl font-bold font-noto-sans mb-8">お問い合わせ</h1>
                     </div>
 
                     <form

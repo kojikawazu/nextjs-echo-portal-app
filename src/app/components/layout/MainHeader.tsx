@@ -1,7 +1,6 @@
-import Link from 'next/link';
-
 // constants
 import { CommonConstants } from '@/app/utils/constants/common-constants';
+import HeaderLink from '@/app/components/layout/atoms/HeaderLink';
 
 interface MainHeaderProps {
     isMenuOpen: boolean;
@@ -25,45 +24,31 @@ const MainHeader = ({ isMenuOpen, setIsMenuOpen }: MainHeaderProps) => {
                     <h1 className="text-xl font-bold">My Tech Hub</h1>
                 </div>
 
-                <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="md:hidden"
-                >
-                    <i
-                        className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}
-                    ></i>
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
+                    <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
                 </button>
 
                 <nav
                     className={`absolute md:relative top-full left-0 w-full md:w-auto bg-[#2c3e50] md:bg-transparent ${isMenuOpen ? 'block' : 'hidden'} md:block`}
                 >
                     <ul className="flex flex-col md:flex-row items-center p-4 md:p-0">
-                        <li className="my-2 md:my-0 md:mx-4">
-                            <Link
-                                href="/portfolio"
-                                className="hover:text-[#3498db] transition-colors duration-200 flex items-center"
-                            >
-                                <i className="fas fa-user-circle mr-2"></i>
-                                ポートフォリオ
-                            </Link>
-                        </li>
-                        <li className="my-2 md:my-0 md:mx-4">
-                            <Link
-                                href={blogWebUrl ? blogWebUrl : '#'}
-                                className="hover:text-[#3498db] transition-colors duration-200 flex items-center"
-                            >
-                                <i className="fas fa-blog mr-2"></i>ブログ
-                            </Link>
-                        </li>
-                        <li className="my-2 md:my-0 md:mx-4">
-                            <Link
-                                href={CommonConstants.URL.CONTACT}
-                                className="hover:text-[#3498db] transition-colors duration-200 flex items-center"
-                            >
-                                <i className="fas fa-envelope mr-2"></i>
-                                お問い合わせ
-                            </Link>
-                        </li>
+                        <HeaderLink
+                            icon={<i className="fas fa-user-circle mr-2"></i>}
+                            text="ポートフォリオ"
+                            url="/portfolio"
+                        />
+
+                        <HeaderLink
+                            icon={<i className="fas fa-blog mr-2"></i>}
+                            text="ブログ"
+                            url={blogWebUrl ? blogWebUrl : '#'}
+                        />
+
+                        <HeaderLink
+                            icon={<i className="fas fa-envelope mr-2"></i>}
+                            text="お問い合わせ"
+                            url={CommonConstants.URL.CONTACT}
+                        />
                     </ul>
                 </nav>
             </div>

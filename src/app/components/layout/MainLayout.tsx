@@ -15,11 +15,7 @@ interface MainLayoutProps {
  * @param {React.ReactNode} children - 子要素
  * @returns JSX.Element
  */
-const MainLayout = ({
-    isMenuOpen,
-    setIsMenuOpen,
-    children,
-}: MainLayoutProps) => {
+const MainLayout = ({ isMenuOpen, setIsMenuOpen, children }: MainLayoutProps) => {
     return (
         <div className="min-h-screen flex flex-col font-roboto bg-[#f0f4f8]">
             <MainHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />

@@ -27,21 +27,15 @@ const ContactConfirm = () => {
 
                     <div className="space-y-6">
                         <div className="border-b pb-4">
-                            <div className="text-sm font-noto-sans text-gray-500">
-                                お名前
-                            </div>
-                            <div className="mt-1 text-lg font-noto-sans">
-                                {formData.name}
-                            </div>
+                            <div className="text-sm font-noto-sans text-gray-500">お名前</div>
+                            <div className="mt-1 text-lg font-noto-sans">{formData.name}</div>
                         </div>
 
                         <div className="border-b pb-4">
                             <div className="text-sm font-noto-sans text-gray-500">
                                 メールアドレス
                             </div>
-                            <div className="mt-1 text-lg font-noto-sans">
-                                {formData.email}
-                            </div>
+                            <div className="mt-1 text-lg font-noto-sans">{formData.email}</div>
                         </div>
 
                         <div className="border-b pb-4">

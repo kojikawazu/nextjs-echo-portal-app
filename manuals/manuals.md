@@ -9,4 +9,6 @@ npm install --save-dev prettier eslint-config-prettier
 npm install @fortawesome/fontawesome-free
 # zodとreact-hook-formをインストール
 npm install zod react-hook-form @hookform/resolvers --legacy-peer-deps
+# resendをインストール
+npm install resend @resend/node
 ```

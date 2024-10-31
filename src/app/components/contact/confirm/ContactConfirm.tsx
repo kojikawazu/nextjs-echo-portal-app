@@ -16,8 +16,11 @@ import {
     getDataBySessionStorage,
     removeDataBySessionStorage,
 } from '@/app/utils/session/session-utils';
+// hooks
+import { useModal } from '@/app/hooks/useModal';
 // components
 import MainLayout from '@/app/components/layout/MainLayout';
+import ConfirmModal from '@/app/components/common/modal/ConfirmModal';
 
 /**
  * お問い合わせ確認
@@ -39,6 +42,8 @@ const ContactConfirm = () => {
     } = useForm<contactFormData>({
         resolver: zodResolver(contactSchema),
     });
+    // モーダル
+    const { isModalOpen, handleOpenModal, handleExecute, handleCloseModal } = useModal();
 
     useEffect(() => {
         // セッションストレージからデータを取得
@@ -59,22 +64,24 @@ const ContactConfirm = () => {
     const onSubmit = async (data: contactFormData) => {
         try {
             console.log(data);
-            // const storedData = sessionStorage.getItem('contactFormData');
-            // const { csrfToken } = JSON.parse(storedData || '{}');
+            const storedData = sessionStorage.getItem('contactFormData');
+            const { csrfToken } = JSON.parse(storedData || '{}');
 
-            // const response = await fetch('/api/contact', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //         'X-CSRF-Token': csrfToken
-            //     },
-            //     body: JSON.stringify(data)
-            // });
+            const response = await fetch('/api/contact/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-Token': csrfToken,
+                },
+                body: JSON.stringify(data),
+            });
 
-            //if (response.ok) {
-            removeDataBySessionStorage(CommonConstants.SESSION_STORAGE_KEY.CONTACT_FORM_DATA);
-            router.push(CommonConstants.URL.CONTACT_SUCCESSED);
-            //}
+            if (response.ok) {
+                removeDataBySessionStorage(CommonConstants.SESSION_STORAGE_KEY.CONTACT_FORM_DATA);
+                router.push(CommonConstants.URL.CONTACT_SUCCESSED);
+            } else {
+                setFormError(response.statusText, setError);
+            }
         } catch (error) {
             setFormError(error, setError);
         }
@@ -98,13 +105,7 @@ const ContactConfirm = () => {
                         )}
                     </div>
 
-                    <form
-                        onSubmit={(e) => {
-                            e.preventDefault();
-                            handleSubmit(onSubmit)(e);
-                        }}
-                        className="bg-white shadow-md rounded-lg p-8 space-y-6"
-                    >
+                    <form className="bg-white shadow-md rounded-lg p-8 space-y-6">
                         <dl className="space-y-4">
                             <div>
                                 <dt className="font-noto-sans text-gray-700 mb-1">お名前</dt>
@@ -142,7 +143,8 @@ const ContactConfirm = () => {
                                 戻る
                             </button>
                             <button
-                                type="submit"
+                                type="button"
+                                onClick={handleOpenModal}
                                 className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-noto-sans py-2 px-4 rounded-md transition duration-200"
                             >
                                 送信する
@@ -151,6 +153,13 @@ const ContactConfirm = () => {
                     </form>
                 </div>
             </div>
+
+            {/* 確認モーダル */}
+            <ConfirmModal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                onConfirm={() => handleExecute(handleSubmit(onSubmit))}
+            />
         </MainLayout>
     );
 };

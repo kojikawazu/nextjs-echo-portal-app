@@ -1,3 +1,4 @@
+import Link from 'next/link';
 // constants
 import { CommonConstants } from '@/app/utils/constants/common-constants';
 // components
@@ -21,10 +22,10 @@ const MainHeader = ({ isMenuOpen, setIsMenuOpen }: MainHeaderProps) => {
     return (
         <header className="bg-gradient-to-r from-[#2c3e50] to-[#3498db] text-white py-4 px-6 sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="flex items-center">
+                <Link href={CommonConstants.URL.PORTAL} className="flex items-center">
                     <i className="fas fa-terminal text-2xl mr-2"></i>
                     <h1 className="text-xl font-bold">My Tech Hub</h1>
-                </div>
+                </Link>
 
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
                     <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>

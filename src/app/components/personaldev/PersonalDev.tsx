@@ -23,7 +23,15 @@ const PersonalDev = () => {
                         icon={<i className="fas fa-cog text-4xl text-[#3498db] mb-4"></i>}
                         title="MyブログWebアプリケーション"
                         description="私のブログ内容を管理するWebアプリケーション"
-                        tech={['React', 'Next.js', 'TypeScript', 'Go', 'Echo', 'AWS App Runner', 'Supabase']}
+                        tech={[
+                            'React',
+                            'Next.js',
+                            'TypeScript',
+                            'Go',
+                            'Echo',
+                            'AWS App Runner',
+                            'Supabase',
+                        ]}
                         url={blogWebUrl}
                         urlIcon={<i className="fas fa-arrow-right ml-2"></i>}
                     />
@@ -34,7 +42,7 @@ const PersonalDev = () => {
                         tech={['React', 'Next.js', 'TypeScript', 'AWS S3']}
                         url={imageWebUrl}
                         urlIcon={<i className="fas fa-arrow-right ml-2"></i>}
-                    />           
+                    />
                 </div>
             </main>
         </MainLayout>

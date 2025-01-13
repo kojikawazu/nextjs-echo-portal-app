@@ -40,14 +40,7 @@ const PersonalDev = () => {
                         icon={<i className="fas fa-cog text-4xl text-[#3498db] mb-4"></i>}
                         title="S3画像管理Webアプリケーション"
                         description="S3に保管している画像を管理するWebアプリケーション"
-                        tech={[
-                            'React',
-                            'Next.js',
-                            'TypeScript',
-                            'AWS S3',
-                            'Vercel',
-                            'Supabase'
-                        ]}
+                        tech={['React', 'Next.js', 'TypeScript', 'AWS S3', 'Vercel', 'Supabase']}
                         url={imageWebUrl}
                         urlIcon={<i className="fas fa-arrow-right ml-2"></i>}
                     />
@@ -62,7 +55,7 @@ const PersonalDev = () => {
                             'OpenAI',
                             'Vercel',
                             'Supabase',
-                            'Dify'
+                            'Dify',
                         ]}
                         url={textAiWebUrl}
                         urlIcon={<i className="fas fa-arrow-right ml-2"></i>}

@@ -27,7 +27,7 @@ npm run dev
 
 ## Web URL
 
--   [ポータルサイト](https://echo-portal-app.vercel.app)
+-   [ポータルサイト](https://nextjs-echo-portal-app.vercel.app)
 
     -   [Frontend](https://github.com/kojikawazu/nextjs-echo-portal-app)
 

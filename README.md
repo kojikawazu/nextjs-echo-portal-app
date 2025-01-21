@@ -62,4 +62,4 @@ npm run dev
 
 -   LINE技術書配信アプリケーション
 
--   [App](https://github.com/kojikawazu/py-book-release-bot)
+    -   [App](https://github.com/kojikawazu/py-book-release-bot)

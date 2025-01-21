@@ -47,4 +47,19 @@ npm run dev
     -   [Frontend](https://github.com/kojikawazu/nextjs-dify-text-speech-app)
 
 -   S3画像管理Webアプリケーション
+
     -   [Frontend](https://github.com/kojikawazu/nextjs-echo-image-app)
+
+-   チャットWebアプリケーション(開発中)
+
+    -   [Web](https://nextjs-hono-front-messanger-app.vercel.app)
+    -   [Frontend](https://github.com/kojikawazu/nextjs-hono-front-messanger-app)
+    -   [Backend](https://github.com/kojikawazu/nextjs-hono-back-messanger-app)
+
+-   LINEニュース配信アプリケーション
+
+    -   [App](https://github.com/kojikawazu/py-it-news-line-messages)
+
+-   LINE技術書配信アプリケーション
+
+-   [App](https://github.com/kojikawazu/py-book-release-bot)

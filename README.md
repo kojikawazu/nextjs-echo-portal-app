@@ -29,37 +29,37 @@ npm run dev
 
 -   [ポータルサイト](https://nextjs-echo-portal-app.vercel.app)
 
-    -   [Frontend](https://github.com/kojikawazu/nextjs-echo-portal-app)
+    -   [Frontend - Next.js](https://github.com/kojikawazu/nextjs-echo-portal-app)
 
 -   ポートフォリオWebアプリケーション
 
-    -   [Frontend](https://github.com/kojikawazu/next-ts-intro-web-app)
-    -   Backend - private
-    -   Data - private
+    -   [Frontend - Next.js](https://github.com/kojikawazu/next-ts-intro-web-app)
+    -   Backend - private - Node.js
+    -   Data - private - JSON
 
 -   ブログWebアプリケーション
 
-    -   [Frontend](https://github.com/kojikawazu/nextjs-echo-front-blog-app)
-    -   [Backend](https://github.com/kojikawazu/nextjs-echo-back-blog-app)
+    -   [Frontend - TS/Next.js](https://github.com/kojikawazu/nextjs-echo-front-blog-app)
+    -   [Backend - Go/Echo](https://github.com/kojikawazu/nextjs-echo-back-blog-app)
 
 -   テキストAI Webアプリケーション
 
-    -   [Frontend](https://github.com/kojikawazu/nextjs-dify-text-speech-app)
+    -   [Frontend - TS/Next.js](https://github.com/kojikawazu/nextjs-dify-text-speech-app)
 
 -   S3画像管理Webアプリケーション
 
-    -   [Frontend](https://github.com/kojikawazu/nextjs-echo-image-app)
+    -   [Frontend - TS/Next.js](https://github.com/kojikawazu/nextjs-echo-image-app)
 
 -   チャットWebアプリケーション(開発中)
 
     -   [Web](https://nextjs-hono-front-messanger-app.vercel.app)
-    -   [Frontend](https://github.com/kojikawazu/nextjs-hono-front-messanger-app)
-    -   [Backend](https://github.com/kojikawazu/nextjs-hono-back-messanger-app)
+    -   [Frontend - TS/Next.js](https://github.com/kojikawazu/nextjs-hono-front-messanger-app)
+    -   [Backend - TS/Hono](https://github.com/kojikawazu/nextjs-hono-back-messanger-app)
 
 -   LINEニュース配信アプリケーション
 
-    -   [App](https://github.com/kojikawazu/py-it-news-line-messages)
+    -   [App - Python](https://github.com/kojikawazu/py-it-news-line-messages)
 
 -   LINE技術書配信アプリケーション
 
-    -   [App](https://github.com/kojikawazu/py-book-release-bot)
+    -   [App - Python](https://github.com/kojikawazu/py-book-release-bot)
